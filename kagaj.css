@@ -1,0 +1,76 @@
+
+
+
+.kagaj-container{
+    margin-top:10px;
+    min-height: 100px;
+    max-width: 350px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    filter: drop-shadow(8px 8px 7px rgba(0,0,0,0.3)) drop-shadow(-8px 8px 7px rgba(0,0,0,0.3)); 
+}
+
+.kagaj-noise {
+  position: relative;
+}
+
+.kagaj-noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4'  stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index:0;
+}
+
+.kagaj-content{
+    position: relative;
+    background-color: rgb(238, 215, 185);
+    z-index: 0;
+    padding: 10px;
+    align-self: stretch;   
+    min-width: 250px;
+    /* background-color: burlywood; */
+    
+   
+}
+
+.kagaj-torn-right {
+    /* height: 100%; */
+    position:relative;
+    background-color: rgb(238, 215, 185);
+    align-self: stretch;      
+    width: 18px;
+    
+    -webkit-mask-image: url('torn-effect.svg');
+    mask-image: url('torn-effect.svg');
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: 100% 23%; /* x y -> change y to make dynamic*/
+    transform: translateX(-3px);
+}
+
+.kagaj-torn-left{
+    /* height: 100%; */
+    align-self: stretch;      
+    width: 18px;
+    /* min-height:100%; */
+    background-color: rgb(238, 215, 185);
+    /* The SVG acts as a stencil */
+    -webkit-mask-image: url('torn-effect.svg');
+    mask-image: url('torn-effect.svg');
+    
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;  /* Shift to middle */
+    mask-position: center ;
+
+   transform: scaleX(-1) translateX(-3px); /* Inverts horixontally entire div lai, alikati maathi */
+
+}
