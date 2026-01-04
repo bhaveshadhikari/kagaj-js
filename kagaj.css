@@ -71,3 +71,16 @@
    transform: scaleX(-1) translateX(-3px); /* Inverts horixontally entire div lai, alikati maathi */
 
 }
+
+.content * {
+    position: relative;
+    z-index: 1;
+    /* margin:15px; */
+    white-space:pre-line;
+    font-size: 23px;
+    font-weight: 500;
+    font-family: "Dancing Script";
+    color: #474747;
+    line-height: 1.6; 
+    text-shadow: 0px 0 0 currentColor, 0 0 6px rgba(14, 14, 14, 0.2);;
+}
