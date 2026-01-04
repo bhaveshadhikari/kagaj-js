@@ -1,14 +1,11 @@
-
-
-
 .kagaj-container{
     margin-top:10px;
-    min-height: 100px;
-    max-width: 350px;
+    min-height: 200px;
+    width: 350px;
     display:flex;
     justify-content:center;
     align-items: center;
-    filter: drop-shadow(8px 8px 7px rgba(0,0,0,0.3)) drop-shadow(-8px 8px 7px rgba(0,0,0,0.3)); 
+    filter: drop-shadow(10px 10px 7px rgba(0,0,0,0.3)); 
 }
 
 .kagaj-noise {
@@ -25,12 +22,12 @@
 }
 
 .kagaj-content{
-    position: relative;
     background-color: rgb(238, 215, 185);
     z-index: 0;
+    align-self: stretch;  
+    min-height:100%;
+    width:250px;
     padding: 10px;
-    align-self: stretch;   
-    min-width: 250px;
     /* background-color: burlywood; */
     
    
@@ -43,8 +40,9 @@
     align-self: stretch;      
     width: 18px;
     
-    -webkit-mask-image: url('torn-effect.svg');
-    mask-image: url('torn-effect.svg');
+    
+    -webkit-mask-image: url('https://raw.githubusercontent.com/bhaveshadhikari/kagaj-js/refs/heads/main/torn-effect.svg');
+    mask-image: url('https://raw.githubusercontent.com/bhaveshadhikari/kagaj-js/refs/heads/main/torn-effect.svg');
     -webkit-mask-size: cover;
     mask-size: cover;
     -webkit-mask-repeat: no-repeat;
@@ -57,11 +55,10 @@
     /* height: 100%; */
     align-self: stretch;      
     width: 18px;
-    /* min-height:100%; */
     background-color: rgb(238, 215, 185);
     /* The SVG acts as a stencil */
-    -webkit-mask-image: url('torn-effect.svg');
-    mask-image: url('torn-effect.svg');
+    -webkit-mask-image: url('https://raw.githubusercontent.com/bhaveshadhikari/kagaj-js/refs/heads/main/torn-effect.svg');
+    mask-image: url('https://raw.githubusercontent.com/bhaveshadhikari/kagaj-js/refs/heads/main/torn-effect.svg');
     
     -webkit-mask-size: cover;
     mask-size: cover;

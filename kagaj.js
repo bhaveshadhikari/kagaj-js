@@ -6,7 +6,7 @@
         if (document.getElementById('kagaj-css')) return;
 
         // Use the captured script source
-        const cssPath = new URL('kagaj.css', scriptSrc).href;
+        const cssPath = new URL('https://raw.githubusercontent.com/bhaveshadhikari/kagaj-js/refs/heads/main/kagaj.css', scriptSrc).href;
 
         const link = document.createElement('link');
         link.id = 'kagaj-css';
