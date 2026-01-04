@@ -1,19 +1,19 @@
 (() => {
-    // Capture currentScript IMMEDIATELY at parse time
-    const scriptSrc = document.currentScript?.src;
-
-    const loadKagajCSS = () => {
+    const loadKagajCSS = async () => {
         if (document.getElementById('kagaj-css')) return;
 
-        // Use the captured script source
-        const cssPath = new URL('https://raw.githubusercontent.com/bhaveshadhikari/kagaj-js/refs/heads/main/kagaj.css', scriptSrc).href;
+        try {
+            const response = await fetch('https://raw.githubusercontent.com/bhaveshadhikari/kagaj-js/refs/heads/main/kagaj.css');
+            const cssText = await response.text();
 
-        const link = document.createElement('link');
-        link.id = 'kagaj-css';
-        link.rel = 'stylesheet';
-        link.href = cssPath;
+            const style = document.createElement('style');
+            style.id = 'kagaj-css';
+            style.textContent = cssText;
 
-        document.head.appendChild(link);
+            document.head.appendChild(style);
+        } catch (error) {
+            console.error('Failed to load Kagaj CSS:', error);
+        }
     };
 
     const initKagaj = () => {
